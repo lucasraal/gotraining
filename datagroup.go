@@ -48,5 +48,9 @@ func main() {
 	fmt.Println(xp[0][3])
 
 	// MAP
-	
+	hhh := map[string]int{
+		"Lucas": 29,
+		"Mariana":20,
+	}
+	fmt.Println(hhh)
 }
