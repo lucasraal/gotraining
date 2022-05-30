@@ -49,8 +49,13 @@ func main() {
 
 	// MAP
 	hhh := map[string]int{
-		"Lucas": 29,
-		"Mariana":20,
+		"Lucas":	29,
+		"Mariana":	20,
 	}
 	fmt.Println(hhh)
+	// use make() to create an empty map
+	sss := make(map[string]int)
+	sss["Isabela"] = 25
+	sss["Aurora"] = 27
+	fmt.Println(sss)
 }
