@@ -58,4 +58,15 @@ func main() {
 	sss["Isabela"] = 25
 	sss["Aurora"] = 27
 	fmt.Println(sss)
+
+	// comma ok expression to check whether 0 is a false value or 0 is a true value
+	vvv := sss["Aurora"]
+	if _, ok := sss["Aurora"]; ok {
+		fmt.Println(vvv)		
+	}
+
+	// for-range loop on a map
+	for iii, zzz := range sss {
+		fmt.Println(iii, zzz)		
+	}
 }
