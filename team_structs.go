@@ -21,5 +21,6 @@ func main() {
 		owner_id:	"0xHKL0G",
 	}
 	fmt.Println(t1)
+	fmt.Println(t1.team_name, t1.power_atk)
 }
 
