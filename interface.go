@@ -31,6 +31,8 @@ func (p person) speak() {
 	fmt.Println("I do not know whether I have license to kill", "- said the person")
 }
 
+// note: and empty interface means all types because all types have the empty method
+// thus interface{} encompasses all types
 type human interface {
 	speak()
 }

@@ -14,7 +14,7 @@ type secretAgent struct {
 	ltk		bool
 }
 
-// funf (r receiver) identifier(parameters) (return) {code}
+// func (r receiver) identifier(parameters) (return) {code}
 // if I define a receiver, it means that the function gets attached to any value of the receiver type
 
 func (s secretAgent) speak() {
@@ -44,7 +44,7 @@ func main() {
 	}
 
 	fmt.Println(sa1)
-	// as func speak is defined as a method to secretAgent, i don't have to write a function and use sa1 as a parameter
+	// as func speak is defined as a method to secretAgent, i don't have to write a function and use sa1 as an argument
 	// instead, I can just call the function speak() as a method (like an object) of sa1
 	sa1.speak()
 
