@@ -23,7 +23,9 @@ func main()  {
 	bs := []byte(s)
 
 	// have to create a slice of the same struct as is the JSON
-	people := []person{}
+	// people := []person{}
+	// the var is more readable - write like a master
+	var people []person
 
 	// gotta use pointer to change the value of the slice from JSON to Go struct
 	err := json.Unmarshal(bs, &people)
