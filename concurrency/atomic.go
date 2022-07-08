@@ -1,0 +1,35 @@
+package main
+
+import (
+	"fmt"
+	"runtime"
+	"sync"
+	"sync/atomic"
+)
+
+func main() {
+	fmt.Println("CPUs:", runtime.NumCPU())
+	fmt.Println("Goroutines:", runtime.NumGoroutine())
+
+	var counter int64
+
+	const gs = 100
+	var wg sync.WaitGroup
+	wg.Add(gs)
+
+
+	for i := 0; i < gs; i++ {
+		go func() {
+			// add a int value to atomic and the delta (by how much you want to add to its value)
+			atomic.AddInt64(&counter, 1)
+			runtime.Gosched()
+			// atomic allows to load (read) the value stored in the memory without generating race condition
+			fmt.Println("Counter\t", atomic.LoadInt64(&counter))
+			wg.Done()
+		}()
+		fmt.Println("Goroutines:", runtime.NumGoroutine())
+	}
+	wg.Wait()
+	fmt.Println("Goroutines:", runtime.NumGoroutine())
+	fmt.Println("count:", counter)
+}

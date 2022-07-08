@@ -34,7 +34,7 @@ func f_odd_even(o, e chan<- int, f chan<- bool)  {
 			e<- i
 		}
 	}
+	// close(o)
+	// close(e)
 	f<- true
-	close(o)
-	close(e)
 }
