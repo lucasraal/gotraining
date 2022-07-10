@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>functions</title>
+</head>
+<body>
+
+Number is
+{{.}}
+
+Double value
+{{. | fdbl}}
+
+Squared value
+{{. | fdbl | fsq}}
+
+Square root value
+{{. | fdbl | fsq | fsqrt}}
+
+Note that pipeline uses the returned value from the previous function
+
+</body>
+</html>

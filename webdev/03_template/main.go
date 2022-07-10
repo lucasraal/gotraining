@@ -2,6 +2,10 @@ package main
 
 import (
 	"fmt"
+	"io"
+	"log"
+	"os"
+	"strings"
 )
 
 func main() {
@@ -21,5 +25,11 @@ func main() {
 </html>
 	`)
 
-	fmt.Println(str)
+	nf, err := os.Create("index.html")
+	if err != nil {
+		log.Fatal("error creating file", err)
+	}
+	defer nf.Close()
+
+	io.Copy(nf, strings.NewReader(str))eTemplate(os.Stdout, "vespa.gohtml", nil)
 }
